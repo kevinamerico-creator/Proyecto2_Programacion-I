@@ -1,5 +1,3 @@
-"""Modulo de historial: guarda y muestra las partidas en un archivo de texto."""
-
 from datetime import datetime
 
 ARCHIVO = "historial.txt"
@@ -7,7 +5,6 @@ ENCABEZADOS = ["Nombre", "Fecha y hora", "Nivel", "Tipo", "Resul.", "Mov."]
 
 
 def registrar_partida(nombre, nivel, movimientos, tipo, resultado):
-    """Guarda una partida al final del archivo (datos separados por coma)."""
     fecha = datetime.now().strftime("%Y-%m-%d %H:%M")
     archivo = open(ARCHIVO, "a", encoding="utf-8")
     archivo.write(nombre + "," + fecha + "," + str(nivel) + "," + tipo + "," +
@@ -16,7 +13,6 @@ def registrar_partida(nombre, nivel, movimientos, tipo, resultado):
 
 
 def cargar_historial():
-    """Lee el archivo y devuelve una lista de partidas (cada una es una lista)."""
     partidas = []
     try:
         archivo = open(ARCHIVO, "r", encoding="utf-8")
@@ -46,7 +42,6 @@ def mostrar_historial():
         print("Aun no hay partidas registradas.")
         return
 
-    # Ancho de cada columna: el texto mas largo de esa columna
     anchos = []
     for encabezado in ENCABEZADOS:
         anchos.append(len(encabezado))
