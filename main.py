@@ -1,5 +1,3 @@
-"""Programa principal: DESATASCA EL AUTO (menu principal)."""
-
 from juego import jugar_manual, jugar_automatico, leer_opcion
 from historial import mostrar_historial
 
@@ -15,7 +13,6 @@ def mostrar_menu():
 
 
 def main():
-    """Bucle del menu principal."""
     while True:
         mostrar_menu()
         opcion = leer_opcion("Ingrese una opcion: ", (1, 2, 3, 4))
